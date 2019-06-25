@@ -54,13 +54,12 @@ class Login extends React.Component {
   }
 
   convertCurrency = (from) => {
-    const apiKey = "04dcc4da1ec54aaaf226c2ff044f5976"
+    const apiKey = "2d44d2a77cc0d5378eaab250f5835576"
     const fromCurrency = 'USD'
     const toCurrency = 'BRL'
     const amount = 50
 
-    let query = fromCurrency + '_' + toCurrency;
-    let url = `http://apilayer.net/api/live?access_key=04dcc4da1ec54aaaf226c2ff044f5976&source=USD&currencies=BRL&format=1`
+    let url = `https://apilayer.net/api/live?access_key=2d44d2a77cc0d5378eaab250f5835576&currencies=EUR,GBP,CAD,PLN&source=USD&format=1`
 
     this.setState({
       loading: true,
@@ -69,7 +68,7 @@ class Login extends React.Component {
     fetch(url).then((response) => {
       return response.json();
     }).then((data) => {
-      const total = from * parseFloat(data.quotes.USDBRL)
+      const total = parseFloat(from) * parseFloat(data.quotes.USDCAD)
 
       console.log(total)
       this.setState({
