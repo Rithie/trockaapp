@@ -10,10 +10,10 @@ const Sidebar = () => (
                     <a href="#">Calculadora</a>
                 </li>
                 <li>
-                    <a href="">Calculadora</a>
+                    <a href="">Cadastro</a>
                 </li>
             </Nav>
-            <Nav>
+            {/* <Nav>
                 <li>
                     <span>CAMBIO</span>
                 </li>
@@ -31,7 +31,7 @@ const Sidebar = () => (
                 <li>
                     <a href="">Calculadora</a>
                 </li>
-            </Nav>
+            </Nav> */}
         </div>
         <h1>dsdfsdf</h1>
     </Container>

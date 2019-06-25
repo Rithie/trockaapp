@@ -18,6 +18,8 @@ class Login extends React.Component {
       password: '',
       error: false,
       redirect: false,
+      from: 0,
+      to: 0,
     };
 
   }
@@ -33,13 +35,22 @@ class Login extends React.Component {
     this.setState({ error: false });
 
     if (!(username === 'euler.alvarenga@icloud.com' && password === 'foreman')) {
-      console.log(e);
+      console.log(username);
       return this.setState({ redirect: true });
     }
 
     console.log("you're logged in. yay!");
 
   }
+
+  handleChange = (event) => {
+    this.setState({
+      from: event.target.value,
+      to: parseInt(event.target.value * 2)
+    }
+      , () => console.log(this.state.username));
+  }
+
 
 
   render() {
@@ -59,8 +70,13 @@ class Login extends React.Component {
                 <input  name="password" type="password" placeholder="Senha 7 digitos" required="required"/>
                 <button type="submit">Entrar</button>
                 <a  href="/signup">Criar conta grátis</a>
+          <input name="from" type="text" value={this.state.from} onChange={this.handleChange} />
+
+          <input name="to" type="text" value={this.state.to}  />
+
             </Form>
         </Container>
+
     <GlobalStyle />
   </Fragment>
     );

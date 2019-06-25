@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom"
 import { isAuthenticated } from './auth';
 
 import Main from './components/Main'
+import CurrencyCalc from './components/CurrencyCalc'
 import Login from './components/Login'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -32,6 +33,7 @@ const Routes = () => (
         <Route exact path='/login' component={() => <Login /> } />
         <Route exact path='/signup' component={() => <Login /> } />
         <PrivateRoute exact path='/dashboard' component={() => <Main /> } />
+        <PrivateRoute exact path='/calc' component={() => <CurrencyCalc /> } />
       </Switch>
     </BrowserRouter>
   </Provider>
